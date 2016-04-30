@@ -1,0 +1,25 @@
+#Src: http://www.ckwnc.com/#1005027
+:Interface
+:Args
+:Search
+:Solutions
+:Base
+:Nbr  
+Args.Check()
+Search.create(initialBase, target)
+{   
+   Solutions.create(target)
+   Base.create(initialBase)
+   Search.loop(BaseNbrs)
+   {
+      Base.buildNextBase()
+      {
+         Nbr.create(newNbr)
+      }
+      solutions.checkCandidate(Base.LastNb)
+      {
+         Nbr.Path()
+      }
+   }
+}
+Solutions.dumpToFile(fileName)
